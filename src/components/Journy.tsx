@@ -10,15 +10,13 @@ const journeyData = [
     description:
       "Successfully completed Secondary School Certificate with a strong academic foundation and interest in technology.",
     icon: <GraduationCap className="w-6 h-6 text-purple-400" />,
-   
   },
-   {
+  {
     year: "2023-Ongoing",
     title: "Diploma Eng. in CST",
     description:
       "Successfully completed Secondary School Certificate with a strong academic foundation and interest in technology.",
     icon: <GraduationCap className="w-6 h-6 text-purple-400" />,
-   
   },
   {
     year: "2023",
@@ -26,7 +24,6 @@ const journeyData = [
     description:
       "Learned React, Next.js, and Redux. Built dynamic and interactive frontend applications.",
     icon: <Rocket className="w-6 h-6 text-blue-400" />,
-    
   },
   {
     year: "2024",
@@ -34,7 +31,6 @@ const journeyData = [
     description:
       "Expanded into backend development with Node.js, Express, NestJS, and databases like MongoDB & MySQL.",
     icon: <Server className="w-6 h-6 text-green-400" />,
-   
   },
   {
     year: "Present",
@@ -42,7 +38,6 @@ const journeyData = [
     description:
       "Currently focusing on advanced topics like Docker, AWS, and CI/CD to build scalable production-ready applications.",
     icon: <Cloud className="w-6 h-6 text-orange-400" />,
-  
   },
 ];
 
@@ -57,13 +52,11 @@ const FlowJourney = () => {
     >
       <Container>
         {/* 🏷️ Title */}
-     <SectionHeader
-  title="My"
-  highlight="Journey"
- description="A timeline of my growth as a web developer, showcasing the skills and technologies I've mastered along the way."
-
-/>
-
+        <SectionHeader
+          title="My"
+          highlight="Journey"
+          description="A timeline of my growth as a web developer, showcasing the skills and technologies I've mastered along the way."
+        />
 
         <div className="relative w-full px-4 lg:px-6 py-10">
           {/* 🌈 Background Glow */}
@@ -73,7 +66,13 @@ const FlowJourney = () => {
           <div className="lg:hidden absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-linear-to-b from-purple-500 via-pink-500 to-blue-500 opacity-30" />
 
           {/* 💻 Curved Line (Desktop Only) */}
-          <svg
+          <motion.svg
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay:1,
+              duration: 0.2,
+            }}
             className="hidden lg:block absolute top-1/2 left-0 w-full h-60 -translate-y-1/2"
             viewBox="0 0 1000 200"
             fill="none"
@@ -97,7 +96,7 @@ const FlowJourney = () => {
                 <stop offset="100%" stopColor="#ec4899" />
               </linearGradient>
             </defs>
-          </svg>
+          </motion.svg>
 
           {/* 🧵 Timeline */}
           <div className="relative flex flex-col lg:flex-row items-center justify-between gap-16">
@@ -131,14 +130,11 @@ const FlowJourney = () => {
                       {item.year}
                     </span>
 
-                    <h3 className="text-base text-white mt-2 ">
-                      {item.title}
-                    </h3>
+                    <h3 className="text-base text-white mt-2 ">{item.title}</h3>
 
                     <p className="text-gray-400 mt-2 text-xs font-secondary leading-relaxed fo-se">
                       {item.description}
                     </p>
-
                   </div>
                 </motion.div>
               );

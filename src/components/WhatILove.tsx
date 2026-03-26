@@ -17,12 +17,12 @@ const interests = [
     description:
       "I love designing scalable backend systems, building APIs, and handling complex business logic. I work with Node.js, Express, and databases like MongoDB & PostgreSQL to create reliable server-side solutions.",
   },
-  // {
-  //   title: "Database Design",
-  //   icon: <Database size={50} />,
-  //   description:
-  //     "I enjoy designing efficient and well-structured databases with proper relationships, normalization, and indexing. I work with SQL and NoSQL databases like PostgreSQL and MongoDB, focusing on performance, data integrity, and scalability.",
-  // },
+  {
+    title: "Database Design",
+    icon: <Database size={50} />,
+    description:
+      "I enjoy designing efficient and well-structured databases with proper relationships, normalization, and indexing. I work with SQL and NoSQL databases like PostgreSQL and MongoDB, focusing on performance, data integrity, and scalability.",
+  },
   {
     title: "System Design",
     icon: <Layers size={50} />,
@@ -42,11 +42,11 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 80 },
+  hidden: { opacity: 0, y: 120 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 },
+    transition: { duration: 0.8 },
   },
   
 };
@@ -67,7 +67,7 @@ function WhatILove() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: false }}
-          className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8"
         >
           {interests.map((itemData, index) => (
             <motion.div
@@ -82,7 +82,7 @@ function WhatILove() {
             >
               {/* Inner Card */}
               <div
-                className="relative h-full rounded-2xl p-6 
+                className="relative h-full rounded-2xl p-3  
     bg-[#0a0d1f]/90 backdrop-blur-xl 
     border border-white/5 
     overflow-hidden"

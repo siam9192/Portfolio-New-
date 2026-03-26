@@ -4,6 +4,79 @@ import Container from "./Container";
 import Typewriter from "typewriter-effect";
 import Counter from "./Counter";
 
+export  function CodeInfo() {
+  const codeLines = [
+    {
+      content: `<span class="text-pink-500">const</span> <span class="text-white">coder</span> = <span class="text-gray-400">{</span>`,
+    },
+    {
+      content: `<span class="ml-4 text-white">name:</span> <span class="text-amber-300">'Arafat Hasan Siam'</span>,`,
+    },
+    {
+      content: `<span class="ml-4 text-white">skills:</span> <span class="text-amber-300">['React','NextJS','Redux','Express','NestJS','MySql','MongoDB','Docker','AWS']</span>,`,
+    },
+    {
+      content: `<span class="ml-4 text-white">hardWorker:</span> <span class="text-orange-400">true</span>,`,
+    },
+    {
+      content: `<span class="ml-4 text-white">quickLearner:</span> <span class="text-orange-400">true</span>,`,
+    },
+    {
+      content: `<span class="ml-4 text-white">problemSolver:</span> <span class="text-orange-400">true</span>,`,
+    },
+    {
+      content: `<span class="ml-4 text-green-400">hireable:</span> <span class="text-orange-400">function</span>() {`,
+    },
+    { content: `<span class="ml-8 text-orange-400">return</span> (` },
+    {
+      content: `<span class="ml-12 text-cyan-400">this.</span> <span class="text-white">hardWorker</span> &&`,
+    },
+    {
+      content: `<span class="ml-12 text-cyan-400">this.</span> <span class="text-white">problemSolver</span> &&`,
+    },
+    {
+      content: `<span class="ml-12 text-cyan-400">this.</span> <span class="text-white">skills.length</span> >= <span class="text-orange-400">5</span>`,
+    },
+    { content: `<span class="ml-8 text-gray-400">);</span>` },
+    { content: `<span class="ml-4 text-gray-400">};</span>` },
+    { content: `<span class="text-gray-400">};</span>` },
+  ];
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-linear-to-r to-[#0a0d37]"
+    >
+      <div className="flex flex-row">
+        <div className="h-[1px] w-full bg-linear-to-r from-transparent via-pink-500 to-violet-600"></div>
+        <div className="h-[1px] w-full bg-linear-to-r from-violet-600 to-transparent"></div>
+      </div>
+
+      <div className="px-4 lg:px-8 py-5">
+        <div className="flex flex-row space-x-2">
+          <div className="h-3 w-3 rounded-full bg-red-400"></div>
+          <div className="h-3 w-3 rounded-full bg-orange-400"></div>
+          <div className="h-3 w-3 rounded-full bg-green-200"></div>
+        </div>
+      </div>
+
+      <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+        <code className="font-mono text-xs md:text-sm lg:text-base">
+          {codeLines.map((line, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 1 + index * 0.2 }}
+              dangerouslySetInnerHTML={{ __html: line.content }}
+            />
+          ))}
+        </code>
+      </div>
+    </motion.div>
+  );
+}
 
 const Hero = () => {
   const containerVars = {
@@ -44,15 +117,15 @@ const Hero = () => {
           variants={containerVars}
           initial="hidden"
           animate="visible"
-          className="mt-20 grid grid-cols-1 lg:grid-cols-2 py-20 gap-12 items-center"
+          className="mt-10 lg:mt-20 grid grid-cols-1 lg:grid-cols-2 py-20 gap-12 items-center"
         >
           {/* ========== CONTENT ========== */}
-          <div className="relative z-20 px-6 max-w-3xl">
+          <div className="relative z-20 px-6 max-w-3xl ">
             <motion.p
               variants={itemVars}
               className="text-xl text-primary mb-3 tracking-widest uppercase"
             >
-            Passionate Developer
+              Passionate Developer
             </motion.p>
 
             <motion.h1
@@ -74,7 +147,7 @@ const Hero = () => {
                       .deleteAll()
                       .typeString("Full Stack Dev.")
                       .pauseFor(1500)
-                      .deleteAll() 
+                      .deleteAll()
                       .start();
                   }}
                 />
@@ -130,187 +203,14 @@ const Hero = () => {
                   <p className="mt-1 text-[9px] tracking-wide uppercase">
                     {stat.label}
                   </p>
-                 
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* ========== CODE BLOCK ========== */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-linear-to-r to-[#0a0d37]"
-          >
-            <div className="flex flex-row">
-              <div className="h-[1px] w-full bg-linear-to-r from-transparent via-pink-500 to-violet-600"></div>
-
-              <div className="h-[1px] w-full bg-linear-to-r from-violet-600 to-transparent"></div>
-            </div>
-
-            <div className="px-4 lg:px-8 py-5">
-              <div className="flex flex-row space-x-2">
-                <div className="h-3 w-3 rounded-full bg-red-400"></div>
-
-                <div className="h-3 w-3 rounded-full bg-orange-400"></div>
-
-                <div className="h-3 w-3 rounded-full bg-green-200"></div>
-              </div>
-            </div>
-
-            <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
-              <code className="font-mono text-xs md:text-sm lg:text-base">
-                <div className="blink">
-                  <span className="mr-2 text-pink-500">const</span>
-
-                  <span className="mr-2 text-white">coder</span>
-
-                  <span className="mr-2 text-pink-500">=</span>
-
-                  <span className="text-gray-400">{"{"}</span>
-                </div>
-
-                <div>
-                  <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
-
-                  <span className="text-gray-400">{`'`}</span>
-
-                  <span className="text-amber-300">Arafat Hasan Siam</span>
-
-                  <span className="text-gray-400">{`',`}</span>
-                </div>
-
-                <div className="ml-4 lg:ml-8 mr-2">
-                  <span className=" text-white">skills:</span>
-
-                  <span className="text-gray-400">{`['`}</span>
-
-                  <span className="text-amber-300">React</span>
-
-                  <span className="text-gray-400">{"', '"}</span>
-
-                  <span className="text-amber-300">NextJS</span>
-
-                  <span className="text-gray-400">{"', '"}</span>
-
-                  <span className="text-amber-300">Redux</span>
-
-                  <span className="text-gray-400">{"', '"}</span>
-
-                  <span className="text-amber-300">Express</span>
-
-                  <span className="text-gray-400">{"', '"}</span>
-
-                  <span className="text-amber-300">NestJS</span>
-
-                  <span className="text-gray-400">{"', '"}</span>
-
-                  <span className="text-amber-300">MySql</span>
-
-                  <span className="text-gray-400">{"', '"}</span>
-
-                  <span className="text-amber-300">MongoDB</span>
-
-                  <span className="text-gray-400">{"', '"}</span>
-
-                  <span className="text-amber-300">Docker</span>
-
-                  <span className="text-gray-400">{"', '"}</span>
-
-                  <span className="text-amber-300">AWS</span>
-
-                  <span className="text-gray-400">{"'],"}</span>
-                </div>
-
-                <div>
-                  <span className="ml-4 lg:ml-8 mr-2 text-white">
-                    hardWorker:
-                  </span>
-
-                  <span className="text-orange-400">true</span>
-
-                  <span className="text-gray-400">,</span>
-                </div>
-
-                <div>
-                  <span className="ml-4 lg:ml-8 mr-2 text-white">
-                    quickLearner:
-                  </span>
-
-                  <span className="text-orange-400">true</span>
-
-                  <span className="text-gray-400">,</span>
-                </div>
-
-                <div>
-                  <span className="ml-4 lg:ml-8 mr-2 text-white">
-                    problemSolver:
-                  </span>
-
-                  <span className="text-orange-400">true</span>
-
-                  <span className="text-gray-400">,</span>
-                </div>
-
-                <div>
-                  <span className="ml-4 lg:ml-8 mr-2 text-green-400">
-                    hireable:
-                  </span>
-
-                  <span className="text-orange-400">function</span>
-
-                  <span className="text-gray-400">{"() {"}</span>
-                </div>
-
-                <div>
-                  <span className="ml-8 lg:ml-16 mr-2 text-orange-400">
-                    return
-                  </span>
-
-                  <span className="text-gray-400">{`(`}</span>
-                </div>
-
-                <div>
-                  <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
-
-                  <span className="mr-2 text-white">hardWorker</span>
-
-                  <span className="text-amber-300">&amp;&amp;</span>
-                </div>
-
-                <div>
-                  <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
-
-                  <span className="mr-2 text-white">problemSolver</span>
-
-                  <span className="text-amber-300">&amp;&amp;</span>
-                </div>
-
-                <div>
-                  <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
-
-                  <span className="mr-2 text-white">skills.length</span>
-
-                  <span className="mr-2 text-amber-300">&gt;=</span>
-
-                  <span className="text-orange-400">5</span>
-                </div>
-
-                <div>
-                  <span className="ml-8 lg:ml-16 mr-2 text-gray-400">{`);`}</span>
-                </div>
-
-                <div>
-                  <span className="ml-4 lg:ml-8 text-gray-400">{`};`}</span>
-                </div>
-
-                <div>
-                  <span className="text-gray-400">{`};`}</span>
-                </div>
-              </code>
-            </div>
-          </motion.div>
+          <div className="lg:block hidden">
+            <CodeInfo />
+          </div>
         </motion.div>
       </Container>
     </section>

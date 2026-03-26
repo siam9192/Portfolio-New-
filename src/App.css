@@ -36,3 +36,35 @@
 html {
     scroll-behavior: smooth;
 }
+
+
+.gradient-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px transparent;
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1px white; /* border color */
+}
+
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 5px rgba(168, 85, 247, 0.6),
+      0 0 15px rgba(168, 85, 247, 0.5);
+  }
+  50% {
+    text-shadow:
+      0 0 10px rgba(168, 85, 247, 1),
+      0 0 30px rgba(168, 85, 247, 0.8);
+  }
+}
+
+.glow-outline {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}

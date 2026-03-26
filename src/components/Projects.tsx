@@ -19,7 +19,7 @@ const item = {
   exit: { opacity: 0, y: 40 }
 };
 
-const tabs = ["Featured", "Frontend", "Backend", "Fullstack"];
+const tabs = ["Featured", "Frontend", "Backend", "Fullstack","Mernstack"];
 
 function Projects() {
   const [activeTab, setActiveTab] = useState("Featured");
@@ -80,11 +80,11 @@ function Projects() {
   border border-[#1b2c68a0] shadow-lg"
             >
               {/* Image */}
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden bg-bg">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-52 object-contain  transition-transform duration-500 group-hover:scale-110"
                 />
 
                 {/* Overlay */}
