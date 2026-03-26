@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Container from "./Container";
 import { Code, Server, Layers, Database } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
 // Data
 const interests = [
@@ -41,12 +42,13 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 80 },
   show: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.5 },
   },
+  
 };
 
 function WhatILove() {
@@ -54,23 +56,18 @@ function WhatILove() {
     <Container>
       <section id="what-i-love" className="py-16 lg:py-24">
         {/* Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-text-on-bg">
-            What I <span className="text-primary-dark">Love To</span> Do
-          </h2>
-          <p className="text-text-on-bg-soft mt-3 text-sm max-w-2xl mx-auto leading-relaxed font-secondary">
-            I focus on different areas of development that allow me to build
-            complete, scalable, and user-friendly applications from end to end.
-          </p>
-        </div>
-
+        <SectionHeader
+          title="What I"
+          highlight="Love To Do"
+          description="Turning ideas into interactive web experiences using modern technologies, while exploring new tools and techniques."
+        />
         {/* Cards */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {interests.map((itemData, index) => (
             <motion.div

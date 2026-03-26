@@ -1,19 +1,33 @@
 import { motion } from "framer-motion";
 import Container from "./Container";
+import SectionHeader from "./SectionHeader";
 
 const technologies = [
   {
-    name: "React",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    name: "HTML",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1280px-HTML5_logo_and_wordmark.svg.png",
   },
   {
-    name: "Node.js",
-    image: "https://nodejs.org/static/images/logo.svg",
+    name: "CSS",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/960px-CSS3_logo.svg.png",
   },
+
+  {
+    name: "Javascript",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/960px-Unofficial_JavaScript_logo_2.svg.png",
+  },
+
   {
     name: "TypeScript",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+  },
+  {
+    name: "Node.js",
+    image: "https://nodejs.org/static/images/logo.svg",
   },
   {
     name: "MongoDB",
@@ -22,12 +36,12 @@ const technologies = [
   {
     name: "PostgreSQL",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_classic.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/250px-Postgresql_elephant.svg.png",
   },
-  {
-    name: "Docker",
-    image: "https://www.vectorlogo.zone/logos/docker/docker-tile.svg",
-  },
+  // {
+  //   name: "Docker",
+  //   image: "https://www.vectorlogo.zone/logos/docker/docker-tile.svg",
+  // },
   {
     name: "Tailwind CSS",
     image: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
@@ -36,58 +50,72 @@ const technologies = [
     name: "Next.js",
     image: "https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg",
   },
-  {
-    name: "GraphQL",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
-  },
+  // {
+  //   name: "GraphQL",
+  //   image:
+  //     "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
+  // },
   {
     name: "Redis",
     image: "https://www.vectorlogo.zone/logos/redis/redis-icon.svg",
   },
-  {
-    name: "AWS",
-    image: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg",
-  },
-  {
-    name: "Firebase",
-    image: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
-  },
-  {
-    name: "Python",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-  },
-  {
-    name: "Kubernetes",
-    image: "https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg",
-  },
-  {
-    name: "Git",
-    image: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
-  },
+  // {
+  //   name: "AWS",
+  //   image: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg",
+  // },
+  // {
+  //   name: "Firebase",
+  //   image: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
+  // },
+  // {
+  //   name: "Python",
+  //   image:
+  //     "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+  // },
+  // {
+  //   name: "Kubernetes",
+  //   image: "https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg",
+  // },
+
   {
     name: "Redux",
     image:
       "https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png",
   },
-  {
-    name: "Jest",
-    image: "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg",
-  },
+  // {
+  //   name: "Jest",
+  //   image: "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg",
+  // },
   {
     name: "Prisma",
-    image: "https://www.vectorlogo.zone/logos/prisma/prisma-icon.svg",
+    image:
+      "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/001/287/square_480/prismaHD.png",
+  },
+  {
+    name: "Mongoose",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D12AQEk8opKsyHhRQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1693917399837?e=2147483647&v=beta&t=L_IQgiz-aKgF-m3L2lYQxNFCwIKvn09DwxghjuWIF-I",
   },
   {
     name: "Vite",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
   },
+
   {
-    name: "Supabase",
-    image: "https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg",
+    name: "Git",
+    image: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
   },
+  {
+    name: "Postman",
+    image:
+      "https://avatars.slack-edge.com/2024-04-05/6934042159649_ac803d1cddbcbef8f110_512.png",
+  },
+
+  // {
+  //   name: "Supabase",
+  //   image: "https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg",
+  // },
 ];
 
 // Animation variants
@@ -112,22 +140,14 @@ const item = {
 function Technologies() {
   return (
     <Container>
-      <section id="technologies" className="py-16 lg:py-24">
+      <section id="skills" className="py-16 lg:py-24">
         {/* Title */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl text-text-on-bg">
-            <span className="text-primary-dark">Technologies</span> I KNOW
-          </h2>
-
-          <p className="text-sm font-secondary text-text-on-bg-soft mt-2 leading-relaxed  lg:w-10/12 mx-auto">
-            I work with a diverse set of modern technologies to design and build
-            scalable, high-performance web applications. From crafting intuitive
-            user interfaces with frontend frameworks to developing robust
-            backend systems and managing databases, I focus on delivering clean,
-            efficient, and maintainable solutions. These tools help me turn
-            ideas into real-world digital products that are fast, reliable, and
-            user-friendly.
-          </p>
+          <SectionHeader
+            title="Technologies I"
+            highlight="Work With"
+            description="I build scalable, high-performance web applications using modern technologies, focusing on clean and efficient solutions."
+          />
         </div>
 
         {/* Grid */}
@@ -143,7 +163,7 @@ function Technologies() {
               key={index}
               variants={item}
               whileHover={{
-                scale: 1.4,
+                scale: 1.2,
                 rotateY: 15,
               }}
               className="group flex flex-col items-center justify-center p-4 

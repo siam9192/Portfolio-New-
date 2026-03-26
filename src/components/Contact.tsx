@@ -1,25 +1,32 @@
 import { motion } from "framer-motion";
 import Container from "./Container";
-import { Mail, Github, Linkedin, MapPin } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, PhoneCall } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
 const contacts = [
   {
     icon: <Mail size={40} />,
     title: "Email",
-    value: "your@email.com",
-    link: "mailto:your@email.com",
+    value: "ahsiam999@gmail.com",
+    link: "mailto:ahsiam999@gmail.com",
   },
   {
     icon: <Github size={40} />,
     title: "GitHub",
-    value: "github.com/yourusername",
-    link: "https://github.com/yourusername",
+    value: "github.com/siam9192",
+    link: "https://github.com/siam9192",
   },
-  {
-    icon: <Linkedin size={40} />,
-    title: "LinkedIn",
-    value: "linkedin.com/in/yourprofile",
-    link: "https://linkedin.com/in/yourprofile",
+  // {
+  //   icon: <Linkedin size={40} />,
+  //   title: "LinkedIn",
+  //   value: "Not available",
+  //   link: "#",
+  // },
+   {
+    icon: <PhoneCall size={40} />,
+    title: "Phone & Whatsapp",
+    value: "Not available",
+    link: "#",
   },
   {
     icon: <MapPin size={40} />,
@@ -43,8 +50,7 @@ const item = {
 
 function ContactInfo() {
   return (
-    <Container>
-      <motion.section
+         <motion.section
         initial={{ opacity: 0, scale: 0.4, y: 100 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
@@ -52,24 +58,20 @@ function ContactInfo() {
         id="contact"
         className="py-16 lg:py-24"
       >
-        {/* Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl text-text-on-bg">
-            <span className="text-primary-dark">How to</span> Contact Me
-          </h2>
-          <p className="text-text-on-bg-soft mt-3 text-sm max-w-xl mx-auto font-secondary">
-            Feel free to reach out through any of the platforms below. I'm
-            always open to new opportunities and collaborations.
-          </p>
-        </div>
-
+       <Container>
+         <SectionHeader
+          title="How To"
+          highlight="Reach Me"
+          description="  Feel free to reach out through any of the platforms below. I'm
+            always open to new opportunities and collaborations."
+        />
         {/* Cards */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid  grid-cols-2  lg:grid-cols-4 gap-6  bg-[#0a0d1f]/90 p-5 lg:p-20 rounded-lg"
+          className="mt-10 grid  grid-cols-2  lg:grid-cols-4 gap-6  bg-[#0a0d1f]/90 p-5 lg:p-20 rounded-lg"
         >
           {contacts.map((itemData, index) => (
             <motion.a
@@ -111,8 +113,8 @@ function ContactInfo() {
         <div className="mt-10 text-center font-secondary text-gray-400 text-sm">
           Open to freelance, collaborations, and full-time opportunities.
         </div>
+       </Container>
       </motion.section>
-    </Container>
   );
 }
 

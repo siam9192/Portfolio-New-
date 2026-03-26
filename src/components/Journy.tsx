@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
 import Container from "./Container";
 import { Server, Cloud, GraduationCap, Rocket } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
 const journeyData = [
   {
     year: "2022",
-    title: "Completed SSC",
+    title: "Complete SSC",
+    description:
+      "Successfully completed Secondary School Certificate with a strong academic foundation and interest in technology.",
+    icon: <GraduationCap className="w-6 h-6 text-purple-400" />,
+   
+  },
+   {
+    year: "2023-Ongoing",
+    title: "Diploma Eng. in CST",
     description:
       "Successfully completed Secondary School Certificate with a strong academic foundation and interest in technology.",
     icon: <GraduationCap className="w-6 h-6 text-purple-400" />,
@@ -13,7 +22,7 @@ const journeyData = [
   },
   {
     year: "2023",
-    title: "Completed Programming Hero Level-1",
+    title: "Complete Programming Hero Level-1",
     description:
       "Learned React, Next.js, and Redux. Built dynamic and interactive frontend applications.",
     icon: <Rocket className="w-6 h-6 text-blue-400" />,
@@ -48,24 +57,20 @@ const FlowJourney = () => {
     >
       <Container>
         {/* 🏷️ Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl text-white font-bold">
-            <span className="text-primary">My</span> Journey
-          </h2>
+     <SectionHeader
+  title="My"
+  highlight="Journey"
+ description="A timeline of my growth as a web developer, showcasing the skills and technologies I've mastered along the way."
 
-          <p className="text-sm text-gray-400 mt-4 leading-relaxed max-w-3xl mx-auto">
-            I work with modern technologies to build scalable, high-performance
-            web applications. From frontend interfaces to backend systems, I
-            focus on clean, efficient, and production-ready solutions.
-          </p>
-        </div>
+/>
+
 
         <div className="relative w-full px-4 lg:px-6 py-10">
           {/* 🌈 Background Glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 blur-3xl opacity-40" />
+          <div className="absolute inset-0 bg-linear-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 blur-3xl opacity-40" />
 
           {/* 📱 Vertical Line (Mobile Only) */}
-          <div className="lg:hidden absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-purple-500 via-pink-500 to-blue-500 opacity-30" />
+          <div className="lg:hidden absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-linear-to-b from-purple-500 via-pink-500 to-blue-500 opacity-30" />
 
           {/* 💻 Curved Line (Desktop Only) */}
           <svg
@@ -126,11 +131,11 @@ const FlowJourney = () => {
                       {item.year}
                     </span>
 
-                    <h3 className="text-lg text-white mt-2 ">
+                    <h3 className="text-base text-white mt-2 ">
                       {item.title}
                     </h3>
 
-                    <p className="text-gray-400 mt-2 text-sm leading-relaxed font-secondary">
+                    <p className="text-gray-400 mt-2 text-xs font-secondary leading-relaxed fo-se">
                       {item.description}
                     </p>
 
