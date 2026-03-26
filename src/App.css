@@ -1,0 +1,38 @@
+.title {
+  background: linear-gradient(90deg, #a855f7, #ec4899, #f43f5e); /* from-purple to pink to red */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hidden {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+
+.typewriter-cursor {
+  color: var(--color-primary);   /* Your desired cursor color, e.g., pink/red */
+  font-weight: bold; /* optional */
+  font-size: inherit; /* matches your title text size */
+  animation: blink 1s infinite;
+}
+
+/* Blinking animation */
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+html {
+    scroll-behavior: smooth;
+}

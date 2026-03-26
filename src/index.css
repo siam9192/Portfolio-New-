@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=Bungee&family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* ========== COLORS ========== */
+  --color-primary: #ec4899;
+  --color-primary-light: #f472b6;
+  --color-primary-dark: #be185d;
+
+  --color-bg: #030014;
+  --color-bg-soft: #0a001f;
+  --color-bg-card: #0f0129;
+
+  /* ========== TEXT COLORS ========== */
+  --text-on-primary: #ffffff;
+  --text-on-primary-light: #1f0120;
+  --text-on-primary-dark: #ffffff;
+
+  --text-on-bg: #f5f5ff;
+  --text-on-bg-soft: #e9e9ff;
+  --text-on-bg-card: #f0f0ff;
+
+  /* ========== MUTED ========== */
+  --text-muted-on-dark: #a1a1aa;
+  --text-muted-on-primary: rgba(255, 255, 255, 0.8);
+
+  /* ========== BORDER ========== */
+  --border-on-dark: rgba(255, 255, 255, 0.08);
+  --border-on-light: rgba(0, 0, 0, 0.1);
+
+  /* ========== FONTS ========== */
+  --font-primary: "Bungee", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
+}
+
+/* ================= THEME MAPPING ================= */
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
+
+  --color-bg: var(--color-bg);
+  --color-bg-soft: var(--color-bg-soft);
+  --color-bg-card: var(--color-bg-card);
+
+  --text-on-primary: var(--text-on-primary);
+  --text-on-primary-light: var(--text-on-primary-light);
+  --text-on-primary-dark: var(--text-on-primary-dark);
+
+  --text-on-bg: var(--text-on-bg);
+  --text-on-bg-soft: var(--text-on-bg-soft);
+  --text-on-bg-card: var(--text-on-bg-card);
+
+  --text-muted-on-dark: var(--text-muted-on-dark);
+  --text-muted-on-primary: var(--text-muted-on-primary);
+
+  --border-on-dark: var(--border-on-dark);
+  --border-on-light: var(--border-on-light);
+
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+}
+
+body {
+  color: var(--text-on-bg);
+  background-color: transparent;
+  font-family: var(--font-primary);
+}
